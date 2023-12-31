@@ -1,0 +1,129 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter";
+}
+
+section {
+  display: flex;
+  margin: 3em 2em;
+  flex-direction: column;
+  position: relative;
+  gap: 5rem;
+}
+
+section::before {
+  position: absolute;
+  width: 150px;
+  content: "";
+  height: 150px;
+  top: 0;
+  left: -50px;
+  background-color: #c7d0e0;
+  z-index: -1;
+  border-radius: 0.5em;
+}
+.topContent {
+  margin-bottom: 5rem;
+}
+
+.leftcol h1 {
+  font-size: 4.3rem;
+  margin-top: 1.7em;
+}
+.leftcol p {
+  font-size: 2.2rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 1em;
+  object-fit: cover;
+}
+
+.rightcol {
+  display: grid;
+
+  gap: 2.3em;
+  grid-template-areas: ". primary" " . primary";
+}
+a.cta {
+  text-decoration: none;
+  background-color: #1a63dd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding: 1.3em;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 0.25em;
+}
+img:nth-of-type(1) {
+  height: 15.3rem;
+}
+img:nth-of-type(2) {
+  height: 15.3rem;
+}
+img:nth-of-type(3) {
+  grid-column: 1/3;
+  height: 15.3rem;
+}
+@media only screen and (min-width: 600px) {
+  section {
+    height: 100%;
+    margin-bottom: 3rem;
+  }
+  img:nth-of-type(2),
+  img:nth-of-type(3),
+  img:nth-of-type(1) {
+    grid-column: unset;
+    height: unset;
+  }
+  a.cta {
+    display: unset;
+    justify-content: unset;
+    align-items: unset;
+    align-self: start;
+    justify-content: space-between;
+  }
+  .rightcol {
+    display: grid;
+
+    gap: 2.3em;
+    grid-template-areas: "primary ." " primary .";
+  }
+  .primary {
+    grid-area: primary;
+  }
+  img:nth-of-type(1) {
+    grid-row: 1/3;
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  section {
+    flex-direction: row;
+    width: 1200px;
+    margin: 10rem auto;
+  }
+  .leftcol {
+    flex: 1.5;
+    padding: 2rem;
+  }
+  .leftcol p {
+    margin-bottom: 7rem;
+  }
+  .rightcol {
+    flex: 1;
+  }
+}
